@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*"],
+    "headers": [
+      { "source": "**/*.@(js|css)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }] }
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "predeploy": ["cp public/js/risk.js functions/risk.js", "node functions/test.js"]
+  },
+  "firestore": { "rules": "firestore.rules" }
+}

@@ -1,0 +1,227 @@
+[
+ {
+  "id": "ampara",
+  "en": "Ampara",
+  "si": "අම්පාර",
+  "ta": "அம்பாறை",
+  "lat": 7.238,
+  "lon": 81.549,
+  "ls": false
+ },
+ {
+  "id": "anuradhapura",
+  "en": "Anuradhapura",
+  "si": "අනුරාධපුරය",
+  "ta": "அனுராதபுரம்",
+  "lat": 8.392,
+  "lon": 80.512,
+  "ls": false
+ },
+ {
+  "id": "badulla",
+  "en": "Badulla",
+  "si": "බදුල්ල",
+  "ta": "பதுளை",
+  "lat": 7.076,
+  "lon": 81.045,
+  "ls": true
+ },
+ {
+  "id": "batticaloa",
+  "en": "Batticaloa",
+  "si": "මඩකලපුව",
+  "ta": "மட்டக்களப்பு",
+  "lat": 7.801,
+  "lon": 81.475,
+  "ls": false
+ },
+ {
+  "id": "colombo",
+  "en": "Colombo",
+  "si": "කොළඹ",
+  "ta": "கொழும்பு",
+  "lat": 6.869,
+  "lon": 80.02,
+  "ls": true
+ },
+ {
+  "id": "galle",
+  "en": "Galle",
+  "si": "ගාල්ල",
+  "ta": "காலி",
+  "lat": 6.223,
+  "lon": 80.253,
+  "ls": true
+ },
+ {
+  "id": "gampaha",
+  "en": "Gampaha",
+  "si": "ගම්පහ",
+  "ta": "கம்பஹா",
+  "lat": 7.123,
+  "lon": 80.018,
+  "ls": true
+ },
+ {
+  "id": "hambantota",
+  "en": "Hambantota",
+  "si": "හම්බන්තොට",
+  "ta": "அம்பாந்தோட்டை",
+  "lat": 6.26,
+  "lon": 81.097,
+  "ls": true
+ },
+ {
+  "id": "jaffna",
+  "en": "Jaffna",
+  "si": "යාපනය",
+  "ta": "யாழ்ப்பாணம்",
+  "lat": 9.713,
+  "lon": 80.153,
+  "ls": false
+ },
+ {
+  "id": "kalutara",
+  "en": "Kalutara",
+  "si": "කළුතර",
+  "ta": "களுத்துறை",
+  "lat": 6.577,
+  "lon": 80.128,
+  "ls": true
+ },
+ {
+  "id": "kandy",
+  "en": "Kandy",
+  "si": "මහනුවර",
+  "ta": "கண்டி",
+  "lat": 7.273,
+  "lon": 80.71,
+  "ls": true
+ },
+ {
+  "id": "kegalle",
+  "en": "Kegalle",
+  "si": "කෑගල්ල",
+  "ta": "கேகாலை",
+  "lat": 7.104,
+  "lon": 80.343,
+  "ls": true
+ },
+ {
+  "id": "kilinochchi",
+  "en": "Kilinochchi",
+  "si": "කිලිනොච්චිය",
+  "ta": "கிளிநொச்சி",
+  "lat": 9.421,
+  "lon": 80.308,
+  "ls": false
+ },
+ {
+  "id": "kurunegala",
+  "en": "Kurunegala",
+  "si": "කුරුණෑගල",
+  "ta": "குருணாகல்",
+  "lat": 7.664,
+  "lon": 80.236,
+  "ls": true
+ },
+ {
+  "id": "mannar",
+  "en": "Mannar",
+  "si": "මන්නාරම",
+  "ta": "மன்னார்",
+  "lat": 8.878,
+  "lon": 80.089,
+  "ls": false
+ },
+ {
+  "id": "matale",
+  "en": "Matale",
+  "si": "මාතලේ",
+  "ta": "மாத்தளை",
+  "lat": 7.669,
+  "lon": 80.73,
+  "ls": true
+ },
+ {
+  "id": "matara",
+  "en": "Matara",
+  "si": "මාතර",
+  "ta": "மாத்தறை",
+  "lat": 6.142,
+  "lon": 80.54,
+  "ls": true
+ },
+ {
+  "id": "monaragala",
+  "en": "Monaragala",
+  "si": "මොණරාගල",
+  "ta": "மொணராகலை",
+  "lat": 6.787,
+  "lon": 81.304,
+  "ls": true
+ },
+ {
+  "id": "mullaitivu",
+  "en": "Mullaitivu",
+  "si": "මුලතිව්",
+  "ta": "முல்லைத்தீவு",
+  "lat": 9.176,
+  "lon": 80.541,
+  "ls": false
+ },
+ {
+  "id": "nuwara-eliya",
+  "en": "Nuwara Eliya",
+  "si": "නුවර එළිය",
+  "ta": "நுவரேலியா",
+  "lat": 6.974,
+  "lon": 80.712,
+  "ls": true
+ },
+ {
+  "id": "polonnaruwa",
+  "en": "Polonnaruwa",
+  "si": "පොළොන්නරුව",
+  "ta": "பொலன்னறுவை",
+  "lat": 7.994,
+  "lon": 81.026,
+  "ls": false
+ },
+ {
+  "id": "puttalam",
+  "en": "Puttalam",
+  "si": "පුත්තලම",
+  "ta": "புத்தளம்",
+  "lat": 7.972,
+  "lon": 79.915,
+  "ls": false
+ },
+ {
+  "id": "ratnapura",
+  "en": "Ratnapura",
+  "si": "රත්නපුර",
+  "ta": "இரத்தினபுரி",
+  "lat": 6.587,
+  "lon": 80.566,
+  "ls": true
+ },
+ {
+  "id": "trincomalee",
+  "en": "Trincomalee",
+  "si": "ත්‍රිකුණාමලය",
+  "ta": "திருகோணமலை",
+  "lat": 8.551,
+  "lon": 81.093,
+  "ls": false
+ },
+ {
+  "id": "vavuniya",
+  "en": "Vavuniya",
+  "si": "වව්නියාව",
+  "ta": "வவுனியா",
+  "lat": 8.858,
+  "lon": 80.482,
+  "ls": false
+ }
+]

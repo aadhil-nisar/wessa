@@ -1,0 +1,16 @@
+{
+  "name": "wessa-functions",
+  "private": true,
+  "description": "Hourly risk check and Telegram bot for Wessa",
+  "main": "index.js",
+  "engines": { "node": "20" },
+  "scripts": {
+    "test": "node test.js",
+    "serve": "firebase emulators:start --only functions,firestore",
+    "deploy": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  }
+}

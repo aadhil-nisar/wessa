@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wessa: rain and flood watch for Sri Lanka</title>
+<meta name="description" content="District-by-district rain, river and landslide watch for Sri Lanka, built on open weather data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Noto+Sans+Sinhala:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand">
+    <span class="word">Wessa</span>
+    <span class="word-si" lang="si">වැස්ස</span>
+  </div>
+  <p class="status" id="status" aria-live="polite">Loading the latest forecast…</p>
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Data shown">
+      <button type="button" data-view="now" aria-pressed="true">Now</button>
+      <button type="button" data-view="ditwah" aria-pressed="false">Ditwah replay</button>
+    </div>
+    <div class="seg seg-lang" role="group" aria-label="District name language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="si" aria-pressed="false" lang="si">සිං</button>
+      <button type="button" data-lang="ta" aria-pressed="false" lang="ta">தமி</button>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="map-pane" aria-label="Map of Sri Lanka's districts">
+    <div class="map-tools">
+      <div class="seg seg-small" role="group" aria-label="Map colouring">
+        <button type="button" data-mode="risk" aria-pressed="true">Risk level</button>
+        <button type="button" data-mode="rain" aria-pressed="false">Rain, next 3 days</button>
+      </div>
+      <label class="picker">
+        <span class="sr-only">Jump to district</span>
+        <select id="picker"></select>
+      </label>
+    </div>
+    <div class="daybar">
+      <div class="days" id="days" role="group" aria-label="Show rain for one day"></div>
+      <div class="day-row">
+        <label class="datepick">Another date <input type="date" id="datePick" min="1940-01-01"></label>
+        <p class="day-msg" id="dayMsg" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="map-wrap" id="mapWrap">
+      <svg id="map" role="group" aria-label="Districts"></svg>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <div class="legend" id="legend"></div>
+  </section>
+
+  <section class="info-pane">
+    <div class="lede" id="lede"></div>
+
+    <article class="detail" id="detail" aria-live="polite"></article>
+
+    <section class="block" aria-labelledby="h-all">
+      <div class="block-head">
+        <h2 id="h-all">All 25 districts</h2>
+        <p class="hint">Sorted by risk, then by the wettest day ahead. Bars show 10 days; the dark ones are forecast.</p>
+      </div>
+      <ol class="rows" id="rows"></ol>
+    </section>
+
+    <section class="block" aria-labelledby="h-haz">
+      <div class="block-head">
+        <h2 id="h-haz">Other hazards nearby</h2>
+        <p class="hint">Earthquakes of magnitude 4+ in the last 30 days within the region, and disaster alerts listed for Sri Lanka.</p>
+      </div>
+      <ul class="hazards" id="hazards"></ul>
+    </section>
+
+    <section class="block" id="alertsBlock" aria-labelledby="h-alerts" hidden>
+      <h2 id="h-alerts">Alerts on Telegram</h2>
+      <p class="hint">Follow any district and the bot messages you when its level goes up. Send <code>/subscribe Kandy</code> to start.</p>
+      <p><a id="botLink" class="bot" href="#">Open the Wessa bot</a></p>
+    </section>
+
+    <section class="block method" aria-labelledby="h-how">
+      <h2 id="h-how">How the level is worked out</h2>
+      <p>For each district the site looks at the wettest single day in the next three days, then adjusts for soaked ground and rising rivers.</p>
+      <table class="rules">
+        <thead><tr><th scope="col">Wettest day ahead</th><th scope="col">Level</th></tr></thead>
+        <tbody>
+          <tr><td>Under 50 mm</td><td><span class="chip l0">Normal</span></td></tr>
+          <tr><td>50 to 75 mm</td><td><span class="chip l1">Watch</span></td></tr>
+          <tr><td>75 to 100 mm</td><td><span class="chip l1">Watch</span>, or <span class="chip l2">Warning</span> in a landslide-prone district</td></tr>
+          <tr><td>100 to 150 mm</td><td><span class="chip l2">Warning</span></td></tr>
+          <tr><td>150 mm or more</td><td><span class="chip l3">Severe</span></td></tr>
+        </tbody>
+      </table>
+      <p>One level is added if more than 150 mm already fell in the past three days and at least 50 mm more is on the way. If the river flow near the district centre is forecast to reach 1.5 times today's level within three days, the district goes to at least Watch; at 2.5 times it goes to at least Warning.</p>
+      <p>The 14 landslide-prone districts are the ones listed by the National Building Research Organisation: Badulla, Colombo, Galle, Gampaha, Hambantota, Kalutara, Kandy, Kegalle, Kurunegala, Matale, Matara, Monaragala, Nuwara Eliya and Ratnapura.</p>
+      <p>Each district uses a single forecast point near its centre, so heavy rain in one corner can be missed. River flow comes from the GloFAS model and may describe a small stream rather than the main river.</p>
+    </section>
+
+    <footer class="foot">
+      <p class="warn"><strong>This is not an official warning service.</strong> For warnings, follow the Disaster Management Centre (hotline 117), the Department of Meteorology and NBRO.</p>
+      <p>Data: <a href="https://open-meteo.com/">Open-Meteo</a> forecast, archive and flood APIs (GloFAS), <a href="https://earthquake.usgs.gov/">USGS</a>, <a href="https://www.gdacs.org/">GDACS</a>. District outlines from GADM via <a href="https://github.com/thejeshgn/srilanka">thejeshgn/srilanka</a>; Sinhala and Tamil names from <a href="https://github.com/SKIDDOW/SriLankaCitiesDatabase">SriLankaCitiesDatabase</a>.</p>
+    </footer>
+  </section>
+</main>
+
+<script src="data/districts.js"></script>
+<script src="data/snapshot.js"></script>
+<script src="js/config.js"></script>
+<script src="js/risk.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
